@@ -14,7 +14,7 @@ contract DeployMinimalAccountFactory is Script {
         MinimalAccountFactory factory = new MinimalAccountFactory();
         console.log("WalletFactory deployed at:", address(factory));
 
-        // Create multiple MinimalAccount instances
+        // Create multiple MinimalAccount instances 
         address[] memory owners = new address[](3);
         owners[0] = address(0x47D1111fEC887a7BEb7839bBf0E1b3d215669D86);
         owners[1] = address(0x1dBDbA98354729109dfad1C1dc603707a66cf506);

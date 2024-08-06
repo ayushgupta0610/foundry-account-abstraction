@@ -77,7 +77,7 @@ contract HelperConfig is Script {
     function getEthSepoliaConfig() public pure returns (NetworkConfig memory) {
         return NetworkConfig({
             entryPoint: 0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789,
-            usdc: 0x53844F9577C2334e541Aec7Df7174ECe5dF1fCf0, // TODO: Deploy your own USDC on Sepolia
+            usdc: 0x53844F9577C2334e541Aec7Df7174ECe5dF1fCf0, // You can deploy your own USDC on Sepolia
             account: BURNER_WALLET
         });
     }

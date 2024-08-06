@@ -1,17 +1,15 @@
-## Foundry
+## Foundry Account Abstraction Demo
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+**Demo repo for minimal smart contract wallets deployment with unique wallet instance per owner address**
 
-Foundry consists of:
+This repo consists of:
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+-   **DeployMinimal.s.sol**: Deployment script for deploying a single instance of minimal account
+-   **DeployMinimalAccountFactory.s.sol**: Deployment of factory contract to deploy factory minimal account deployment contract
+-   **HelperConfig.s.sol**: HelperConfig to support deployment on different chains, such as Ethereum, Sepolia, Arbitrum, Anvil, zkSync (haven't tested)
+-   **MinimalAccount**: Minimal smart contract wallet
+-   **MinimalAccountFactory**: Minimal smart contract wallet to deploy multiple instances of minimal accounts. Note, an owner can only have a single instance of minimal account. 
 
-## Documentation
-
-https://book.getfoundry.sh/
 
 ## Usage
 
@@ -39,28 +37,14 @@ $ forge fmt
 $ forge snapshot
 ```
 
-### Anvil
+### Anvil (for deployment on local network)
 
 ```shell
 $ anvil
 ```
 
-### Deploy
+### Deploy and Verify 
 
 ```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+$ forge script script/DeployMinimalAccountFactory.s.sol:DeployMinimalAccountFactory --rpc-url <NETWORK_RPC_URL> --broadcast --verify
 ```
